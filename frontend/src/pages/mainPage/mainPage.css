@@ -1,0 +1,65 @@
+.main-containers{
+    background-color:#CA1B05 ;
+    min-height: 100vh;
+    width: 100%;
+    top:0;
+    left:0;
+    position: absolute;
+   
+}
+.content{
+    margin-top: 30px;
+}
+.poster{
+    width:283px ;
+    margin-left: 20px;
+    height: 400px;
+}
+.presave{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+
+}
+.title-presave{
+    color: #fff;
+}
+.logo{
+    position: absolute;
+     transform: translate(-51%, -25%);
+     height: auto; 
+    top: 100%;          
+    left: 50%;
+}
+.text{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.text-content{
+    display: block;
+    max-width: 300px;
+    margin: 0 auto;
+    color: #fff;
+    padding-bottom: 20px;
+}
+.number-section{
+ position: relative;
+}
+.telephone{
+    width:244px ;
+    position: relative;
+    z-index: 2;
+   
+}
+.phone-number{
+    position: absolute;
+    top:70%;
+    transform: translate(-50%, -50%);
+    left:50.3%;
+    z-index: 1;
+    color: #fff;
+    font-size: 25px;
+}
