@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  mongo:
+    image: mongo:6
+    container_name: mongo
+    volumes:
+      - mongo_data:/data/db
+    restart: always
+
+  migrator:
+    build:
+      context: ./migrator
+    env_file:
+      - .env
+    depends_on:
+      - mongo
+    restart: "no"
+
+  backend:
+    build:
+      context: ./backend
+    env_file:
+      - .env
+    depends_on:
+      - migrator
+    ports:
+      - "8000:8000"
+
+volumes:
+  mongo_data:
