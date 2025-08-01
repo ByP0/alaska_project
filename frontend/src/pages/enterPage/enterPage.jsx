@@ -3,14 +3,12 @@ import cassette from '../../images/cassette.png'
 import { IoMdPlay } from "react-icons/io";
 import {useNavigate,Link} from 'react-router-dom'
 
-
 export const EnterPage=()=>{
 
     const navigate=useNavigate()
     const handleClickCassets=()=>{
         navigate('/main')
     }
-
     return(
         <div className='container'>
             <div className='image'>
