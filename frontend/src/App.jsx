@@ -5,11 +5,8 @@ import { Route, Routes,Navigate } from 'react-router-dom'
 import { useEffect } from 'react';
 
 
-
-
-
     const sendUserAgent = async()=>{
-        const userAgent = window.navigator.userAgent
+     
 
         try{
             await fetch('http://localhost:8000/log',{
@@ -18,7 +15,7 @@ import { useEffect } from 'react';
                     'accept': 'application/json',
                     'content-type': 'application/x-www-form-urlencoded'
                 },
-                body: JSON.stringify({userAgent:userAgent})
+              
             })
             console.log('отправил');
         }catch(error){
