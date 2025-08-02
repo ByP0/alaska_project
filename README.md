@@ -1,5 +1,5 @@
 # alaska_project
-
+```
 project-root/
 │
 ├── backend/
@@ -53,3 +53,4 @@ project-root/
 ├── .gitignore
 ├── docker-compose.yml
 └── README.md
+```
