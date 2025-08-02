@@ -1,17 +1,15 @@
-FROM node:20-alpine AS build
-
-RUN mkdir /app
+# Stage 1: Build
+FROM node:20-alpine AS builder
 
 WORKDIR /app
+COPY . .
+RUN npm install && npm run build
 
-COPY ./ /app
+# Stage 2: Serve static files with nginx
+FROM nginx:alpine
 
-RUN npm install -g npm@11.3.0
+COPY --from=builder /app/dist /usr/share/nginx/html
+COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 
-RUN npm install 
-
-RUN npm install vite-plugin-compression --save-dev
-
-EXPOSE 5173
-
-CMD ["npm", "run", "dev"]
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
